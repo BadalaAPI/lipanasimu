@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25 oct. 2016, 09:46:32
+    Author     : ALVIN
+*/
+
+body{
+    background-color: #e8eaee;
+    padding: 0px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+}
+#head{
+    padding: 10px 0px 10px 0px;
+    height: 40px;
+    width: 100%;
+    background-color: #fff;
+    height: 70px
+}
+#content{
+    padding: 0px;
+    margin-top: -20px
+}
+#description1{
+
+}
+#text-descr1{
+    position: absolute;
+    z-index: 2;
+    right: 60px;
+    top: 100px;
+    font-family: lucida calligraphy
+}
+#text-descr1-caption{
+    margin-top: 50px;
+    font-family: arial;
+}
+.description2-content{
+    min-height: 100px;
+    padding: 10px
+}
+#text-descr1-mobile{
+    background-color: #000;
+}
+.bc-bleu-index{
+    background-color: #81d6df;
+}
+

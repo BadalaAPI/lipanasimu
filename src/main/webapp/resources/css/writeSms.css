@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27 oct. 2016, 12:50:13
+    Author     : ALVIN
+*/
+#div-app-menu a{text-decoration: none}
+#div-app-menu a:hover{color: #ffffff}
+#div-app-menu li:hover {background-color: #1c1c1c}
+#div-app-menu .list-group-item{border-right: none; border-left: none; padding: 7px; border-radius: 0px}
+#div-app-menu .list-group-item a:hover{cursor: pointer; background-color: #f94815}
+#div-app-menu .list-group{margin-top: -20px}
+#div-app-menu tr{border-bottom: 1px solid #747474; width: 100%}
+
+#list-repertoire .list-group-item{border-right: none; border-left: none; padding: 7px; border-radius: 0px}
+
+option{
+    padding: 5px
+}
+.form-control:hover{
+    border: 2px solid #f5330e;
+    color: #2a7bb6
+}
+
+.list-group-item{
+    border: none;
+    border-color: #fff;
+}
+
+.checkbox-input{
+    height: 20px;
+    width: 20px;
+    cursor: pointer
+}
+.checkbox-label{
+    margin-top: 3px;
+    position: absolute;
+    margin-left: 10px;
+    cursor: pointer
+}
+.checkbox-label:hover{
+    color: #f5330e;
+}
+

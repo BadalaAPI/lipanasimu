@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <body>
+        <!-- BLOCK D'AJOUT D'UN CONTACT -->
+        <div class="modal fade" id="add-contact">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel panel-default">
+                        <div class="modal-header panel-heading">
+                            <button  type="button" class="close" data-dismiss="modal">X</button>
+                            <h3 class="panel-title text-bold">Ajoutez un contact ici</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h:form>
+                                <div class="form-group-sm">
+                                    <label>Nom</label>
+                                    <h:inputText id="nom" class='form-control' required="requireds" a:placeholder="Le nom du contact"/>    
+                                </div><br/>
+
+                                <div class="form-group-sm">
+                                    <label>N° téléphone</label>
+                                    <h:inputText id="telephone" class='form-control' required="requireds" a:placeholder="Ex: +243123456789"/>    
+                                </div><br/>
+
+                                <div class="form-group-sm">
+                                    <button class="btn btn-sm btn-primary btn-block " value="Ajouter le contact" id="btn-add-contact" style="margin-bottom: 5px; color: #fff"><strong>Ajouter le contact</strong></button>
+                                </div><br/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN BLOCK D'AJOUT DE Contact -->
+
+        <!-- BLOCK D'AJOUT D'UN GROUPE -->
+        <div class="modal fade" id="add-groupe">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel panel-default">
+                        <div class="modal-header panel-heading">
+                            <button  type="button" class="close" data-dismiss="modal">X</button>
+                            <h3 class="panel-title text-bold">Ajoutez un contact ici</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h:form>
+                                <div class="form-group-sm">
+                                    <label>Nom</label>
+                                    <h:inputText id="nom" class='form-control' required="requireds" a:placeholder="Le nom du groupe"/>    
+                                </div><br/>
+
+                                <div class="form-group-sm">
+                                    <label>Choisir des contacts à ajouter au groupe</label>
+                                    <ul class="list-group" id="list-repertoire">
+                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                            <input id='c1' class="checkbox-input" type="checkbox"/> 
+                                            <label for="c1" class="taille-12 checkbox-label">Contact 1</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                            <input id='c2' class="checkbox-input" type="checkbox"/> 
+                                            <label for="c2" class="taille-12 checkbox-label">Contact 2</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                            <input id='g1' class="checkbox-input" type="checkbox"/> <label for="g1" class="taille-12 checkbox-label">Contact 1</label>
+                                        </li>
+                                    </ul>
+                                </div><br/>
+
+                                <div class="form-group-sm">
+                                    <button class="btn btn-sm btn-primary btn-block " value="Créez le groupe" id="btn-add-groupe" style="margin-bottom: 5px; color: #fff"><strong><i class="fa fa-users"></i> Créez le groupe</strong></button>
+                                </div><br/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN BLOCK D'AJOUT D'UN GROUPE  -->
+
+        <!-- BLOCK D'AJOUT D'UN CONTACT A UN GROUPE -->
+        <div class="modal fade" id="add-contact-to-groupe">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel panel-default">
+                        <div class="modal-header panel-heading">
+                            <button  type="button" class="close" data-dismiss="modal">X</button>
+                            <h3 class="panel-title text-bold">Ajoutez des contacts au groupe X selectionne</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h:form>
+                                <ul class="list-group" id="list-repertoire">
+                                    <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                        <input id='c1' class="checkbox-input" type="checkbox"/> 
+                                        <label for="c1" class="taille-12 checkbox-label">Contact 1</label>
+                                    </li>
+                                    <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                        <input id='c2' class="checkbox-input" type="checkbox"/> 
+                                        <label for="c2" class="taille-12 checkbox-label">Contact 2</label>
+                                    </li>
+                                    <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                        <input id='g1' class="checkbox-input" type="checkbox"/> <label for="g1" class="taille-12 checkbox-label">Contact 1</label>
+                                    </li>
+                                </ul>
+                                <div class="form-group-sm">
+                                    <button class="btn btn-sm btn-primary btn-block " value="Ajouter les contacts" id="btn-add-contact-on-groupe" style="margin-bottom: 5px; color: #fff"><strong>Ajouter les contacts</strong></button>
+                                </div><br/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN BLOCK D'UN CONTACT A UN GROUPE -->
+
+        <ui:composition template="./templateGeneral.xhtml">
+
+            <ui:define name="content">
+                <div class="templateContent container-fluid" style="padding: 0px; padding-bottom: 50px">
+                    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="padding: 5px">
+                        <style>
+                            /** Style acces rapide.. ***/
+                            #div-app-menu a{text-decoration: none}
+                            #div-app-menu a:hover{color: #ffffff}
+                            #div-app-menu li:hover {background-color: #1c1c1c}
+                            #div-app-menu .list-group-item{border: none; padding: 7px; border-radius: 0px}
+                            #div-app-menu .list-group-item a:hover{cursor: pointer; background-color: #f94815}
+                            #div-app-menu .list-group{margin-top: -20px}
+                            #div-app-menu tr{border-bottom: 1px solid #747474; width: 100%}
+                        </style>
+                        <div class="panel panel-default">
+                            <div class="div-tete panel-heading media" style="padding: 0px">
+                                <div class="pull-left text-center" style="width: 50px; background-color: #ff0000; padding: 4px">
+                                    <i class="fa fa-bars fa-2x blanc"></i>
+                                </div>
+                                <div class="media-object vert" style="width: 80%; padding: 4px; padding-top: 10px; font-weight: bold">
+                                    <span class="taille-14" style="margin-left: 5px; color: #ff0000">Accès Rapide</span>
+                                </div>
+                            </div>
+                            <div class="panel-body" style="padding: 0px">
+                                <ul class="list-group" id="div-app-menu">
+                                    <a class="gris" href="home.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-home"></i> Accueil </li></a>
+                                    <a class="vert" href="writeSms.xhtml"><li class="list-group-item menu-item-droite"><i class=" fa fa-pencil"></i> Ecrire message </li></a>
+                                    <a href="sentSms.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-envelope"></i> Boite d'envoie</li></a>
+                                    <br/>
+                                    <a class="rouge" href="profil.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-user"></i> Mon Profil </li></a>
+                                    <a class="rouge" href="profil.xhtml"><li class="list-group-item menu-item-droite"><i class=" fa fa-adjust"></i> Mon abonnement </li></a>
+                                    <a class="rouge" href="repertoire.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-book"></i> Mon repertoire</li></a>
+                                    <br/>
+                                    <a href="#"><li class="list-group-item menu-item-droite taille-12"><strong><i class="fa fa-power-off"></i> DECONNECTION</strong></li></a>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="padding: 5px">
+                        <div class="panel panel-default">
+                            <div class="panel-body"  style="padding: 0px">
+                                <div class="panel-heading blanc text-center taille-16" style="padding: 0px">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#repertoire" data-toggle="tab" style="padding: 10px">
+                                                <strong><i class="fa fa-book"></i> Repertoire</strong>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#groupe" data-toggle="tab" style="padding: 10px">
+                                                <strong><i class="fa fa-users"></i> Groupes</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body text-bold taille-16 tab-content" style="padding: 5px">
+                                    <div class="tab-pane active"  id="repertoire">
+                                        <table class="table table-striped table-responsive">
+                                            <div class="panel-heading" style="padding: 2px">
+                                                <span class="orange hidden-xs">Tous vos contacts (345)</span>
+                                                <button data-toggle="modal" href="#add-contact" style="margin-bottom: 5px" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Ajouter contact</button>
+                                            </div>
+                                            <thead>
+                                                <tr class="taille-13 text-danger">
+                                                    <th>Nom</th>
+                                                    <th>N° téléphon</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="annuaire_message">
+                                                    <td>Alvin</td>
+                                                    <td>+243995502981</td>
+                                                    <td class="taille-18">
+                                                        <a href="#" ><span class="fa fa-trash-o rouge " style="margin-right: 10px"></span></a> 
+                                                        <a href="writeSms.xhtml"><span class="fa fa-envelope text-success"></span></a>
+                                                    </td>
+                                                </tr>
+                                                <tr id="annuaire_message">
+                                                    <td>Alvin</td>
+                                                    <td>+243995502981</td>
+                                                    <td class="taille-18">
+                                                        <a href="#" ><span class="fa fa-trash-o rouge " style="margin-right: 10px"></span></a> 
+                                                        <a href="writeSms.xhtml"><span class="fa fa-envelope text-success"></span></a>
+                                                    </td>
+                                                </tr>
+                                                <tr id="annuaire_message">
+                                                    <td>Alvin</td>
+                                                    <td>+243995502981</td>
+                                                    <td class="taille-18">
+                                                        <a href="#" ><span class="fa fa-trash-o rouge " style="margin-right: 10px"></span></a> 
+                                                        <a href="writeSms.xhtml"><span class="fa fa-envelope text-success"></span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="groupe">
+                                        <table class="table table-striped table-responsive">
+                                            <div class="panel-heading" style="padding: 2px">
+                                                <span class="orange hidden-xs">Tous vos groupes (12)</span>
+                                                <button data-toggle="modal" href="#add-groupe" style="margin-bottom: 5px" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Créer un groupe</button>
+                                            </div>
+                                            <thead>
+                                                <tr class="taille-13 text-danger">
+                                                    <th>Nom</th>
+                                                    <th>membres</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id="annuaire_message">
+                                                    <td>Groupe 1</td>
+                                                    <td><span class="badge bc-orange">23 Membres</span></td>
+                                                    <td class="taille-18">
+                                                        <a href="#" ><span class="fa fa-trash-o rouge " style="margin-right: 10px"></span></a> 
+                                                        <a data-toggle="modal" href="#add-contact-to-groupe"><span class="fa fa-user-plus bleu" style="margin-right: 10px"></span></a>
+                                                        <a href="writeSms.xhtml"><span class="fa fa-envelope text-success"></span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

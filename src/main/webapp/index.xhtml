@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Nasimu.net</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        <h:outputScript library="js" name="jquery-1.11.3.min.js"/>
+        <h:outputStylesheet library="css" name="index.css" />
+        <link rel="icon" type="image/ico" href="resources/img/iconlogo.png"/>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/nasimu.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="navbar navbar-default" id="head" style="height: 70px">
+                <div class="container">
+                    <div class="navbar-header pull-left hidden-xs">
+                        <a class="navbar-brand" style="margin-top: -20px" href="#">
+                            <img src="resources/img/logonasimu.png" width="200px" height="50px" class="img-rounded" alt="icon logo"/>
+                        </a>
+                    </div>
+                    <div class="navbar-header pull-left hidden-md hidden-sm hidden-lg pull-right">
+                        <a class="navbar-brand" style="margin-top: -20px" href="#">
+                            <img src="resources/img/logomin.jpg" width="50px" height="50px" class="img-rounded" alt="icon logo"/>
+                        </a>
+                    </div>
+                    <div class="navbar-right hidden-xs block-menu-right" style="margin-top: 10px">
+                        <a href="#" class="show-block-login"><strong class="taille-12 bleu" style="margin-right: 10px">Se connecter</strong></a>
+                        <h:link outcome="signUp.xhtml" class="btn btn-sm bc-orange btn-orange blanc" style="color: #fff"><strong><i class="fa fa-user"></i> Créer Compte</strong></h:link>
+                    </div>
+                    <div class="navbar-right hidden-lg hidden-md hidden-sm pull-right block-menu-right" style="margin-top: 10px">
+                        <a href="#" class="show-block-login"><strong class="taille-12 bleu" style="margin-right: 10px">Se connecter</strong></a>
+                        <h:link outcome="signUp.xhtml" class="btn btn-sm bc-orange btn-orange blanc" style="color: #fff"><i class="fa fa-user"></i> Créer Compte</h:link>
+                    </div>
+
+                </div>
+            </div>
+        </h:form>
+        <div class="" id="content">
+
+            <!--Form Connexion -->
+            <div id="form-login" class="bc-bleu-index block-login" style="width: 100%; padding: 20px">
+                <div class="container">
+                    <h:form>
+                        <div class="form-group-lg" style="width: 100%; padding-top: 20px">
+
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px">
+                                <h:inputText validator="#{validator.validateTelephone}" required="true" value="#{login.telephone}" requiredMessage="veillez entrer le numéro de téléphone" id="telephone" class='form-control' a:placeholder="N° téléphone"/>    
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px">
+                                <h:inputSecret validator="#{validator.validateString}" required="true" requiredMessage="veillez entrer le mot de passe" value="#{login.pwd}" id="motdepasse" class='form-control'  a:placeholder="Mot de passe"/>
+                                <h:link outcome="password_recovery.xhtml" class="taille-12" style="font-weight: bold; color: #33656a"><i class="fa fa-key"></i> Mot de passe oublié?</h:link>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px">
+                                <h:commandLink action="#{login.validateUsernamePassword}" class="btn btn-orange btn-lg btn-block bc-orange" value="Se connecter" style="margin-left: 5px; margin-bottom: 5px; color: #fff"/>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px; position: absolute; top: 70px; right: 30px">
+                                <span style="cursor: pointer" class="fa fa-close fa-3x rouge btn-close-form pull-right"></span>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+            <p:messages closable="true"/>
+            <div id="description1">
+                <img class="img-responsive hidden-xs hidden-sm" width="100%" src="resources/img/newimg/nasimu-home.jpg" alt=""/>
+                <img class="img-responsive hidden-lg hidden-md" width="100%" src="resources/img/newimg/nasimu-home-mobile.jpg" alt=""/>
+
+                <div class="container-fluid hidden-xs hidden-sm" id="text-descr1">
+                    <div class="col-lg-12 col-md-12 text-right">
+                        <strong class="blanc taille-50 vrinda">Solution SMS pour le business</strong>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-lg-offset-8 col-md-offset-8">
+                        <div id="text-descr1-caption" class="taille-20 orange">
+                            <p><i class="fa fa-check-circle-o bleu"></i> Effectuer des paiement en ligne avec Airtel Money</p><br/>
+                            <p><i class="fa fa-check-circle-o bleu"></i> Tranférer et récupérer de l'argent sur payPal</p><br/>
+                            <p><i class="fa fa-check-circle-o bleu"></i> Envoyez vers un compte d'un autre opérateur</p><br/>
+
+                            <button class="btn btn-lg bc-bleu btn-bleu blanc btn-block" style="color: #fff"><i class="fa fa-user-md"></i> Testez Gratuitement</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid hidden-md hidden-lg" id="text-descr1-mobile">
+                    <div class="col-xs-12 col-sm-12 text-center" style="margin-bottom: -10px">
+                        <legend class="blanc taille-20 vrinda">Solution SMS pour le business</legend>
+                    </div>
+                    <div class="col-xs-12 col-sm-12" style="margin-top: -40px; padding: 10px">
+                        <div id="text-descr1-caption" class="taille-14 orange">
+                            <p><i class="fa fa-check-circle-o bleu"></i> Utilisez le nom de votre entreprise comme expéditeur</p><br/>
+                            <p><i class="fa fa-check-circle-o bleu"></i> Prise en charge de la marjorité des opérateurs en RDC</p><br/>
+                            <p><i class="fa fa-check-circle-o bleu"></i> Envoyez plus de 10 000 SMS en un clic</p><br/>
+
+                            <button class="btn btn-md bc-bleu btn-bleu blanc btn-block" style="color: #fff"><i class="fa fa-user-md"></i> Testez Gratuitement</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="description2">
+                <div class="bc-bleu-index description2-content">
+                    <div class="container">
+                        <legend class="taille-30 blanc">Comment ça marche ? </legend>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                            <br/>
+                            <img class="block-center img-responsive" src="resources/img/stepsIcon/icons_step1.png" alt=""/>
+                            <label class="blanc">Composez le message à envoyer à vos clients</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                            <br/>
+                            <img class="block-center img-responsive" src="resources/img/stepsIcon/icons_steps2.png" alt=""/>
+                            <label class="blanc">Complétez la liste de contacts de vos clients</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                            <br/>
+                            <img class="block-center img-responsive" src="resources/img/stepsIcon/icons_steps3.png" alt=""/>
+                            <label class="blanc">Choisir la balance adaptée à vos besoins</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center">
+                            <br/>
+                            <img class="block-center img-responsive" src="resources/img/stepsIcon/icons_steps4.png" alt=""/>
+                            <label class="blanc">Envoyer le message directement ou ultérieurement</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bc-blanc description2-content">
+                    <div class="container">
+                        <legend class="taille-30">bulk sms avec nasimu.net</legend>
+                        <p>Envoyez plusieurs sms partout en RDC en un clic, compatibilité avec la mojorité des opérateur GSM de la RDC.
+                            Nous fournissons une ultime vitesse de transmission et une garantie de livraison de sms à vos contacts.
+                        </p><br/>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" style="padding: 5px">
+                            <div class="container-fluid" style="padding: 0px">
+                                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-center" style="padding: 0px">
+                                    <img width="100%" src="resources/img/WhyIcons/icons_why1.png" alt=""/>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 text-left" style="padding: 0px">
+                                    <strong class="taille-18" style="color: #c24d5c">Messages personalisés de votre compagnie</strong>
+                                    <p class="taille-12">Les SMS sont livrés à vos clients avec le nom de votre compagnie comme expéditeur , cela est un atout qui restera dans la mémoire visuel de vos clients. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" style="padding: 5px">
+                            <div class="container-fluid" style="padding: 0px">
+                                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-center" style="padding: 0px">
+                                    <img width="100%" src="resources/img/WhyIcons/icons_why2.png" alt=""/>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 text-left" style="padding: 0px">
+                                    <strong class="taille-18" style="color: #036fab">Planning SMS et carnet d'addresse</strong>
+                                    <p class="taille-12">Créer une liste des clients et un planning de distribution qui sera enclanché automatiquement. Cela vous permettra de ne pas manquer un événement important.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" style="padding: 5px">
+                            <div class="container-fluid" style="padding: 0px">
+                                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-center" style="padding: 0px">
+                                    <img width="100%" src="resources/img/WhyIcons/icons_why3.png" alt=""/>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 text-left" style="padding: 0px">
+                                    <strong class="taille-18" style="color: #036fab">Livraison guarantie des SMS</strong>
+                                    <p class="taille-12">Les sms envoyés sont livrés à vos clients dans le delais et vous pouvez recevoir une notification de la remise. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" style="padding: 5px">
+                            <div class="container-fluid" style="padding: 0px">
+                                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 text-center" style="padding: 0px">
+                                    <img width="100%" src="resources/img/WhyIcons/icons_why4.png" alt=""/>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9 col-xs-9 text-left" style="padding: 0px">
+                                    <strong class="taille-18" style="color: #036fab">Un API disponible pour l'intégration à votre application personelle</strong>
+                                    <p class="taille-12">Accroitre l'opportunité de votre business en intégrant le service SMS à votre application. Nous contacter pour plus de détail. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_lime_green description2-content container-fluid">
+
+                </div>
+                <div class="clearfix description2-content container-fluid">
+
+                </div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            $(".block-login").hide();
+            $(".show-block-login").click(function () {
+                $(".block-login").fadeIn(400);
+                $("#head").css("border", "none");
+                $("#text-descr1").css("top", 220);
+            });
+
+            $(".btn-close-form").click(function () {
+                $(".block-menu-right").removeClass("hidden").fadeIn();
+                $(".block-login").hide();
+                $("#text-descr1").css("top", 100);
+            });
+        </script>
+
+    </h:body>
+</html>
+

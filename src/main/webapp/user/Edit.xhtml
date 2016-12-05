@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog id="UserEditDlg" widgetVar="UserEditDialog" modal="true" resizable="false"  appendTo="@(body)" header="#{resourcebundle.EditUserTitle}" closeOnEscape="true">
+
+            <h:form id="UserEditForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid  columns="2" columnClasses="column" rendered="#{userController.selected != null}">
+
+
+                        <h:outputLabel value="#{resourcebundle.EditUserLabel_idUser}" for="idUser" />
+                        <h:outputText id="idUser" value="#{userController.selected.idUser}" />
+
+                        <p:outputLabel value="#{resourcebundle.EditUserLabel_nom}" for="nom" />
+                        <p:inputText id="nom" value="#{userController.selected.nom}" title="#{resourcebundle.EditUserTitle_nom}" required="true" requiredMessage="#{resourcebundle.EditUserRequiredMessage_nom}" size="60" maxlength="60"/>
+
+                        <p:outputLabel value="#{resourcebundle.EditUserLabel_prenom}" for="prenom" />
+                        <p:inputText id="prenom" value="#{userController.selected.prenom}" title="#{resourcebundle.EditUserTitle_prenom}" required="true" requiredMessage="#{resourcebundle.EditUserRequiredMessage_prenom}" size="60" maxlength="60"/>
+
+                        <p:outputLabel value="#{resourcebundle.EditUserLabel_telephone}" for="telephone" />
+                        <p:inputText id="telephone" value="#{userController.selected.telephone}" title="#{resourcebundle.EditUserTitle_telephone}" required="true" requiredMessage="#{resourcebundle.EditUserRequiredMessage_telephone}" size="15" maxlength="15"/>
+
+                        <p:outputLabel value="#{resourcebundle.EditUserLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{userController.selected.email}" title="#{resourcebundle.EditUserTitle_email}" required="true" requiredMessage="#{resourcebundle.EditUserRequiredMessage_email}" size="60" maxlength="60"/>
+
+                        <p:outputLabel value="#{resourcebundle.EditUserLabel_motDePasse}" for="motDePasse" />
+                        <p:inputText id="motDePasse" value="#{userController.selected.motDePasse}" title="#{resourcebundle.EditUserTitle_motDePasse}" required="true" requiredMessage="#{resourcebundle.EditUserRequiredMessage_motDePasse}" size="100" maxlength="100"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{userController.save}" value="#{resourcebundle.Save}" update="display,:UserListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,PF('UserEditDialog'));">
+                        <p:confirm header="#{resourcebundle.ConfirmationHeader}" message="#{resourcebundle.ConfirmEditMessage}" icon="ui-icon-alert"/>
+                    </p:commandButton>
+                    <p:commandButton value="#{resourcebundle.Cancel}" oncomplete="PF('UserEditDialog').hide()" update="display" process="@this" immediate="true" resetValues="true"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

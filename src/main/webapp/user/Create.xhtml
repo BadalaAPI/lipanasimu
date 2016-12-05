@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserCreateDlg" widgetVar="UserCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{resourcebundle.CreateUserTitle}" closeOnEscape="true">
+
+            <h:form id="UserCreateForm">
+
+                <h:panelGroup id="display" rendered="#{userController.selected != null}">
+                    <p:panelGrid columns="2" columnClasses="column">
+
+                        <p:outputLabel value="#{resourcebundle.CreateUserLabel_nom}" for="nom" />
+                        <p:inputText id="nom" value="#{userController.selected.nom}" title="#{resourcebundle.CreateUserTitle_nom}" required="true" requiredMessage="#{resourcebundle.CreateUserRequiredMessage_nom}" size="60" maxlength="60"/>
+
+                        <p:outputLabel value="#{resourcebundle.CreateUserLabel_prenom}" for="prenom" />
+                        <p:inputText id="prenom" value="#{userController.selected.prenom}" title="#{resourcebundle.CreateUserTitle_prenom}" required="true" requiredMessage="#{resourcebundle.CreateUserRequiredMessage_prenom}" size="60" maxlength="60"/>
+
+                        <p:outputLabel value="#{resourcebundle.CreateUserLabel_telephone}" for="telephone" />
+                        <p:inputText id="telephone" value="#{userController.selected.telephone}" title="#{resourcebundle.CreateUserTitle_telephone}" required="true" requiredMessage="#{resourcebundle.CreateUserRequiredMessage_telephone}" size="15" maxlength="15"/>
+
+                        <p:outputLabel value="#{resourcebundle.CreateUserLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{userController.selected.email}" title="#{resourcebundle.CreateUserTitle_email}" required="true" requiredMessage="#{resourcebundle.CreateUserRequiredMessage_email}" size="60" maxlength="60"/>
+
+                        <p:outputLabel value="#{resourcebundle.CreateUserLabel_motDePasse}" for="motDePasse" />
+                        <p:inputText id="motDePasse" value="#{userController.selected.motDePasse}" title="#{resourcebundle.CreateUserTitle_motDePasse}" required="true" requiredMessage="#{resourcebundle.CreateUserRequiredMessage_motDePasse}" size="100" maxlength="100"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{userController.saveNew}" value="#{resourcebundle.Save}" update="display,:UserListForm:datalist,:growl" oncomplete="handleSubmit(xhr,status,args,PF('UserCreateDialog'));">
+                        <p:confirm header="#{resourcebundle.ConfirmationHeader}" message="#{resourcebundle.ConfirmCreateMessage}" icon="ui-icon-alert"/>
+                    </p:commandButton>
+
+                    <p:commandButton value="#{resourcebundle.Cancel}" oncomplete="PF('UserCreateDialog').hide()" update="display" process="@this" immediate="true" resetValues="true"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

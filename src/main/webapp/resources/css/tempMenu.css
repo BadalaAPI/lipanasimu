@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27 oct. 2016, 09:23:37
+    Author     : ALVIN
+*/
+.text-menu:hover{
+    color: #ed3905;
+}
+.li-menu:hover{background-color: #ed3905}
+#menu1{
+    padding: 0px
+}
+#menu_accueil{
+    padding: 0px
+}
+.center_content{
+    margin-top: 70px
+}
+#top{
+    
+}

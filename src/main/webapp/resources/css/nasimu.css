@@ -1,0 +1,209 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25 oct. 2016, 10:42:36
+    Author     : ALVIN
+*/
+body{
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    background-color: #fff
+}
+.templateContent{
+    margin-top: 95px;
+    padding: 0px
+}
+
+
+.rouge{color: #c90303;}
+.rouge{
+    color: #c40808 
+}
+.bleu{
+    color: #269abc
+}
+.gris{
+    color: #555
+}
+.bleu-clair{
+    color: #c3cdeb
+}
+.orange{
+    color: #f86018
+}
+.vert{
+    color: #1ba260;
+}
+.bleu-vert{
+    color: #38595e
+}
+.blanc{
+    color: #fff
+}
+.noir{
+    color: #000;
+}
+
+.bc-rouge{
+    background-color: #c40808 
+}
+.bc-blanc{
+    background-color: #fff
+}
+.bc-bleu{
+    background-color: #269abc
+}
+.bc-gris{
+    background-color: #555
+}
+.bc-mauve{
+    background-color: #7b4776;
+}
+.bc-bleu-clair{
+    background-color: #c3cdeb
+}
+.bc-orange{
+    background-color: #f86018
+}
+.bc-vert{
+    background-color: #1ba260;
+}
+.bc-bleu-vert{
+    background-color: #38595e
+}
+.bc-clair-mauve{
+    background-color: #fcebff;
+}
+.block-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.media > #prop_super_correspondance{
+    padding: 3px;
+    background-color: #fafeff;
+    border-radius: 5px;
+    box-shadow: 1px 5px 2px #d4d4d4;
+}
+.taille-10{font-size: 10px}
+.taille-11{font-size: 11px}
+.taille-12{font-size: 12px}
+.taille-13{font-size: 13px}
+.taille-14{font-size: 14px}
+.taille-15{font-size: 15px}
+.taille-16{font-size: 16px}
+.taille-17{font-size: 17px}
+.taille-18{font-size: 18px}
+.taille-19{font-size: 19px}
+.taille-20{font-size: 20px}
+.taille-25{font-size: 25px}
+.taille-30{font-size: 30px}
+.taille-35{font-size: 35px}
+.taille-40{font-size: 40px}
+.taille-45{font-size: 45px}
+.taille-50{font-size: 50px}
+.font-bold{font-weight: bold}
+
+
+.btn-orange {
+    color: #fff;
+    background-color: #f86018;
+    border-color: #e93a10;
+}
+.btn-orange:hover {
+    color: #269abc;
+    border-radius: 6px;
+    background-color: #e93a10;
+}
+
+.btn-bleu {
+    color: #fff;
+    background-color: #2690d3;
+    border-color: #e93a10;
+}
+.btn-bleu:hover {
+    color: #269abc;
+    border-radius: 6px;
+    background-color: #116fab;
+}
+
+.btn-rouge {
+    color: #fffafe;
+    background-color: #c61520;
+    border-color: #e7e5e7;
+}
+.btn-rouge:hover {
+    color: #fffafe;
+    border-radius: 25px;
+    background-color: #c61520;
+    border-color: #e7e5e7;
+}
+
+.btn-noir {
+    color: #fff;
+    background-color: #272727;
+    border-color: #e7e5e7;
+}
+.btn-noir:hover {
+    color: #fcfcfc;
+    border-radius: 25px;
+    background-color: #151515;
+    border-color: #e7e5e7;
+}
+bc-noir{background-color: #272727}
+
+
+.bordure-3{
+    border-radius: 3px;
+}
+.bordure-5{
+    border-radius: 5px;
+}
+.bordure-7{
+    border-radius: 7px;
+}
+.bordure-10{
+    border-radius: 10px;
+}
+
+.notif{
+    background-color: red !important;
+    font-weight: bold;
+}
+
+
+.font-vrinda{font-family: Vrinda;}
+
+/*Classe de marge et padding*/
+.padding-2{
+    padding: 2px
+}
+.padding-3{
+    padding: 3px
+}
+.padding-5{
+    padding: 5px
+}
+.padding-10{
+    padding: 10px
+}
+
+
+/*Classe de border-raduis*/
+.border-raduis-3{border-radius: 3px;}
+.border-raduis-5{border-radius: 5px}
+.border-raduis-10{border-radius: 10px}
+.border-raduis-15{border-radius: 15px}
+
+/** Style acces rapide.. ***/
+#div-app-menu a{text-decoration: none}
+#div-app-menu a:hover{color: #ffffff}
+#div-app-menu li:hover {background-color: #1c1c1c}
+#div-app-menu .list-group-item{border: none; padding: 7px; border-radius: 0px}
+#div-app-menu .list-group-item a:hover{cursor: pointer; background-color: #f94815}
+#div-app-menu .list-group{margin-top: -20px}
+#div-app-menu tr{border-bottom: 1px solid #747474; width: 100%}
+
+.divider:hover{background-color: #ffffff}

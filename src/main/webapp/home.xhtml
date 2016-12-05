@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link href="resources/css/home.css" rel="stylesheet" type="text/css"/>
+    <body style="background-color: #fff">
+
+        <ui:composition template="./templateGeneral.xhtml">
+
+
+            <ui:define name="content">
+                <div class="templateContent container-fluid" style="padding: 0px; padding-bottom: 50px">
+                    <h1 class="text-center"><i class="fa fa-moon-o"></i> Bonjour #{login.userConnected.prenom}</h1>
+                    <legend class="text-center orange">Vous pouvez désormais éffectuer des paiement en ligne avec Airtel Money</legend>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="padding: 0px">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 img-descption-home" style="padding: 0px">
+                                    <img  width="100%" height="180px" src="resources/i/news/Reklamnaya, SMS, rassylka, devushki.jpg" alt=""/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label class="taille-18 text-primary">Plus besoin d'utiliser votre carte de crédit en ligne! Utilisez votre compte airtel money pour payer toutes vos courses</label>
+                                    <a href="writeSms.xhtml" class="btn btn-sm btn-primary btn-block"><strong><i class="fa fa-shopping-cart"></i> Acheter en ligne</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="padding: 0px">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 img-descption-home" style="padding: 0px">
+                                    <img width="100%" height="180px" src="resources/i/news/Sms sleng Yazyk sms kak delat besplatnuyu sms rassylku cherez internet.jpg" alt=""/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label class="taille-18 rouge">Avec Lipa Nasimu, Faites du E-banking avec airtel money et garder l'historique de toutes les transactions</label>
+                                    <a href="repertoire.xhtml" class="btn btn-sm btn-rouge blanc bc-rouge btn-block"><strong><i class="fa fa-book"></i> vérifier mes transactions</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="padding: 0px; background-color: #000000;">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 img-descption-home" style="padding: 0px">
+                                    <img class="img-responsive" src="resources/i/news/laptop-1512838_1280.png" alt=""/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 blanc">
+                                    <legend class="taille-30 blanc">Connecter PayPal à Airtel money </legend>
+                                    <p class="taille-18">Vous pouvez maintenant envoyer votre argent directement sur vos cartes de crédit VISA, Maestro etc. .
+                                        Très facile et très pratique pour vos courses avec Paypal. votre monnaie mobile est envoyé depuis votre compte Airtel money vers Paypal et inversément!
+                                    </p><br/>
+                                    <a href="writeSms.xhtml" class="btn btn-lg btn-info btn-block"><strong><i class="fa fa-envelope"></i> Transférer maintenant</strong></a>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

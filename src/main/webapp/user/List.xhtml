@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h:form id="UserListForm">
+
+        <p:panel header="#{resourcebundle.ListUserTitle}">
+            <p:contextMenu id="UserDataTableContextMenu" for="datalist">  
+                <p:menuitem value="#{resourcebundle.Create}" onclick="document.getElementById('UserListForm:createButton').click();" icon="ui-icon-plus"/>
+                <p:menuitem value="#{resourcebundle.View}" onclick="document.getElementById('UserListForm:viewButton').click();" icon="ui-icon-search"/>
+                <p:menuitem value="#{resourcebundle.Edit}" onclick="document.getElementById('UserListForm:editButton').click();" icon="ui-icon-pencil"/>
+                <p:menuitem value="#{resourcebundle.Delete}" onclick="document.getElementById('UserListForm:deleteButton').click();" icon="ui-icon-trash"/>
+            </p:contextMenu>
+            <p:dataTable id="datalist"
+                         value="#{userController.items}"
+                         lazy="false"
+                         rowKey="#{item.idUser}"
+                         var="item"
+                         paginator="true"
+                         rows="10"
+                         rowsPerPageTemplate="10,20,30,40,50"
+                         selectionMode="single"
+                         selection="#{userController.selected}">
+                <!--
+                         To enable Lazy Loading, please copy/replace the following lines above,
+                         and be sure to replace the word HASH with the # symbol:
+                
+                         value="HASH{userController.lazyItems}"
+                         lazy="true"
+                         rowKey="HASH{item.idUser}"  <<< Remove this line
+                -->
+
+
+                <p:ajax event="rowSelect"   update="@form:createButton,@form:viewButton,@form:editButton,@form:deleteButton,@form:UserDataTableContextMenu"/>
+                <p:ajax event="rowUnselect" update="@form:createButton,@form:viewButton,@form:editButton,@form:deleteButton,@form:UserDataTableContextMenu"/>
+                <p:ajax event="contextMenu" update="@form:createButton @form:viewButton @form:editButton @form:deleteButton"/>
+                <p:ajax event="rowDblselect" onsuccess="document.getElementById('UserListForm:viewButton').click();"/>
+
+                <p:column sortBy="#{item.idUser}" filterBy="#{item.idUser}">
+                    <f:facet name="header">
+                        <h:outputText value="#{resourcebundle.ListUserTitle_idUser}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.idUser}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.nom}" filterBy="#{item.nom}">
+                    <f:facet name="header">
+                        <h:outputText value="#{resourcebundle.ListUserTitle_nom}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.nom}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.prenom}" filterBy="#{item.prenom}">
+                    <f:facet name="header">
+                        <h:outputText value="#{resourcebundle.ListUserTitle_prenom}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.prenom}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.telephone}" filterBy="#{item.telephone}">
+                    <f:facet name="header">
+                        <h:outputText value="#{resourcebundle.ListUserTitle_telephone}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.telephone}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.email}" filterBy="#{item.email}">
+                    <f:facet name="header">
+                        <h:outputText value="#{resourcebundle.ListUserTitle_email}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.email}"/>
+                </p:column>
+
+
+                <p:column sortBy="#{item.motDePasse}" filterBy="#{item.motDePasse}">
+                    <f:facet name="header">
+                        <h:outputText value="#{resourcebundle.ListUserTitle_motDePasse}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.motDePasse}"/>
+                </p:column>
+
+
+            </p:dataTable>
+
+            <p:commandButton id="createButton"                             icon="ui-icon-plus"   value="#{resourcebundle.Create}" actionListener="#{userController.prepareCreate}" update=":UserCreateForm" oncomplete="PF('UserCreateDialog').show()"/>
+            <p:commandButton id="viewButton"   style="visibility: hidden;" icon="ui-icon-search" value="#{resourcebundle.View}" update=":UserViewForm" oncomplete="PF('UserViewDialog').show()" disabled="#{empty userController.selected}"/>
+            <p:commandButton id="editButton"   style="visibility: hidden;" icon="ui-icon-pencil" value="#{resourcebundle.Edit}" update=":UserEditForm" oncomplete="PF('UserEditDialog').show()" disabled="#{empty userController.selected}"/>
+            <p:commandButton id="deleteButton" style="visibility: hidden;" icon="ui-icon-trash"  value="#{resourcebundle.Delete}" actionListener="#{userController.delete}" update=":growl,datalist" disabled="#{empty userController.selected}">
+                <p:confirm header="#{resourcebundle.ConfirmationHeader}" message="#{resourcebundle.ConfirmDeleteMessage}" icon="ui-icon-alert"/>
+            </p:commandButton>
+
+        </p:panel>
+        <ui:include src="/confirmation.xhtml"/>
+    </h:form>
+
+</ui:composition>

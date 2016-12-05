@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserViewDlg" widgetVar="UserViewDialog" modal="true" resizable="false"  appendTo="@(body)" header="#{resourcebundle.ViewUserTitle}" closeOnEscape="true">
+
+            <h:form id="UserViewForm">
+
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" columnClasses="column" rendered="#{userController.selected != null}">
+
+                        <h:outputText value="#{resourcebundle.ViewUserLabel_idUser}"/>
+                        <h:outputText value="#{userController.selected.idUser}" title="#{resourcebundle.ViewUserTitle_idUser}"/>
+
+                        <h:outputText value="#{resourcebundle.ViewUserLabel_nom}"/>
+                        <h:outputText value="#{userController.selected.nom}" title="#{resourcebundle.ViewUserTitle_nom}"/>
+
+                        <h:outputText value="#{resourcebundle.ViewUserLabel_prenom}"/>
+                        <h:outputText value="#{userController.selected.prenom}" title="#{resourcebundle.ViewUserTitle_prenom}"/>
+
+                        <h:outputText value="#{resourcebundle.ViewUserLabel_telephone}"/>
+                        <h:outputText value="#{userController.selected.telephone}" title="#{resourcebundle.ViewUserTitle_telephone}"/>
+
+                        <h:outputText value="#{resourcebundle.ViewUserLabel_email}"/>
+                        <h:outputText value="#{userController.selected.email}" title="#{resourcebundle.ViewUserTitle_email}"/>
+
+                        <h:outputText value="#{resourcebundle.ViewUserLabel_motDePasse}"/>
+                        <h:outputText value="#{userController.selected.motDePasse}" title="#{resourcebundle.ViewUserTitle_motDePasse}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{resourcebundle.Close}" onclick="PF('UserViewDialog').hide()"/>
+                </h:panelGroup>
+
+            </h:form>
+
+        </p:dialog>
+
+    </ui:composition>
+
+</html>

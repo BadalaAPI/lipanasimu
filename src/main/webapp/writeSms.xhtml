@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <link href="resources/css/writeSms.css" rel="stylesheet" type="text/css"/>
+    <body>
+        <ui:composition template="./templateGeneral.xhtml">
+            <ui:define name="content">
+                <div class="templateContent container-fluid" style="padding: 0px; padding-bottom: 50px">
+                    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="padding: 5px">
+                        <style>
+                            /** Style acces rapide.. ***/
+                            #div-app-menu a{text-decoration: none}
+                            #div-app-menu a:hover{color: #ffffff}
+                            #div-app-menu li:hover {background-color: #1c1c1c}
+                            #div-app-menu .list-group-item{border: none; padding: 7px; border-radius: 0px}
+                            #div-app-menu .list-group-item a:hover{cursor: pointer; background-color: #f94815}
+                            #div-app-menu .list-group{margin-top: -20px}
+                            #div-app-menu tr{border-bottom: 1px solid #747474; width: 100%}
+                        </style>
+                        <div class="panel panel-default">
+                            <div class="div-tete panel-heading media" style="padding: 0px">
+                                <div class="pull-left text-center" style="width: 50px; background-color: #ff0000; padding: 4px">
+                                    <i class="fa fa-bars fa-2x blanc"></i>
+                                </div>
+                                <div class="media-object vert" style="width: 80%; padding: 4px; padding-top: 10px; font-weight: bold">
+                                    <span class="taille-14" style="margin-left: 5px; color: #ff0000">Accès Rapide</span>
+                                </div>
+                            </div>
+                            <div class="panel-body" style="padding: 0px">
+                                <ul class="list-group" id="div-app-menu">
+                                    <a class="gris" href="home.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-home"></i> Accueil </li></a>
+                                    <a class="vert" href="writeSms.xhtml"><li class="list-group-item menu-item-droite"><i class=" fa fa-pencil"></i> Ecrire message </li></a>
+                                    <a href="sentSms.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-envelope"></i> Boite d'envoie</li></a>
+                                    <br/>
+                                    <a class="rouge" href="profil.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-user"></i> Mon Profil </li></a>
+                                    <a class="rouge" href="profil.xhtml"><li class="list-group-item menu-item-droite"><i class=" fa fa-adjust"></i> Mon abonnement </li></a>
+                                    <a class="rouge" href="repertoire.xhtml"><li class="list-group-item menu-item-droite"><i class="fa fa-book"></i> Mon repertoire</li></a>
+                                    <br/>
+                                    <a href="#"><li class="list-group-item menu-item-droite taille-12"><strong><i class="fa fa-power-off"></i> DECONNECTION</strong></li></a>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="padding: 5px">
+                        <div class="panel panel-default">
+                            <div class="panel-body"  style="padding: 0px">
+                                <div class="padding-10">
+                                    <p class="orange"><i class="fa fa-edit fa-2x"></i><label class="taille-20"> Composez le message à envoyer à vos Contacts</label></p>
+                                </div>
+                                <h:form>
+                                    <div class="col-lg-6 col-md-6 col-md-12 col-xs-12">
+
+                                        <div class="form-group-lg form-horizontal" style="width: 100%; padding-top: 20px">
+                                            <label>Envoyez Entant que:</label>
+                                            <select class="form-control" style="margin-bottom: 20px">
+                                                <option class="hidden">Choisir le nom d'envoi</option>
+                                                <option>Nom1</option>
+                                                <option>Nom2</option>
+                                                <option>Nom3</option>
+                                                <option>Nom3</option>
+                                            </select>
+                                            <h:inputTextarea id="telephone" class='form-control' rows="12" required="requireds" a:placeholder="Ecrire le message"/>    
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-md-12 col-xs-12" style="padding-top: 20px">
+                                        <label>Choisir les destinateurs ici</label>
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading blanc text-center taille-16" style="padding: 0px">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active">
+                                                        <a href="#repertoire" data-toggle="tab" style="padding: 10px">
+                                                            <strong><i class="fa fa-book"></i> Repertoire</strong>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#groupe" data-toggle="tab" style="padding: 10px">
+                                                            <strong><i class="fa fa-users"></i> Groupes</strong>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="panel-body text-bold taille-16 tab-content" style="padding: 5px">
+                                                <div class="tab-pane active"  id="repertoire">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='1' class="checkbox-input" type="checkbox"/> <label for="1" class="taille-12 checkbox-label">Nom Contact1</label>
+                                                        </li>
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='2' class="checkbox-input" type="checkbox"/> <label for="2" class="taille-12 checkbox-label">Nom Contact2</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane" id="groupe">
+                                                    <ul class="list-group" id="list-repertoire">
+                                                        <li class="list-group-item" style="padding: 5px 0px 0px 0px; border: none">
+                                                            <input id='g1' class="checkbox-input" type="checkbox"/> <label for="g1" class="taille-12 checkbox-label">Groupe1</label>
+                                                            <span class="pull-right taille-11 label-success blanc padding-5 border-raduis-3">23 membres</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-md-12 col-xs-12 padding-10">
+                                        <h:commandButton class="pull-right btn btn-primary" value="Envoyez le message" />
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+
+        <script>
+
+
+        </script>
+
+    </body>
+</html>

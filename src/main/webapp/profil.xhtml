@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link href="resources/css/profil.css" rel="stylesheet" type="text/css"/>
+    <body>
+
+        <ui:composition template="./templateGeneral.xhtml">
+
+            <ui:define name="content">
+                <div class="templateContent container-fluid" style="padding: 0px; padding-bottom: 50px">
+                    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm" style="padding: 5px; position: fixed; z-index: 3; padding-right: 80px">
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="padding: 0px">
+                                <ul class="nav nav-pills nav-stacked list-group" id="div-app-menu" style="margin-bottom: 0px">
+                                    <a href="#vue-ensemble" data-toggle='tab'><li  class="list-group-item menu-item-droite active">Vue d'ensemble</li></a>
+                                    <a href="#edition-profil" data-toggle='tab'><li class="list-group-item menu-item-droite">Editer le profil </li></a>
+                                    <a href="#nom-envoi" data-toggle='tab'><li class="list-group-item menu-item-droite">Nom d'envoi</li></a>
+                                    <a href="#entreprise" data-toggle='tab'><li class="list-group-item menu-item-droite">Entreprise</li></a>
+                                    <a href="#abonnement" data-toggle='tab'><li class="list-group-item menu-item-droite">Abonnement</li></a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xs-12 hidden-md hidden-lg">
+                        <div class="btn-group dropdown">
+                            <button class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown"><i class="fa fa-bars"></i> Menu</button>
+                            <ul class="dropdown-menu" id="menu-profil-items">
+                                <a href="#vue-ensemble" data-toggle='tab' ><li class="menu-item-droite active">Vue d'ensemble</li></a>
+                                <a href="#edition-profil" data-toggle='tab'><li class="menu-item-droite">Editer le profil</li></a>
+                                <a href="#nom-envoi" data-toggle='tab'><li class="menu-item-droite">Nom d'envoi</li></a>
+                                <a href="#entreprise" data-toggle='tab'><li class="menu-item-droite">Entreprise</li></a>
+                                <a href="#abonnement" data-toggle='tab'><li class="menu-item-droite">Abonnement</li></a>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-lg-push-3 col-md-push-3 tab-content" style="padding: 5px">
+                        <div class="panel panel-success tab-pane active" id="vue-ensemble">
+                            <div class="panel-heading" style="padding: 5px">
+                                <h4>Vue d'ensemble</h4>
+                            </div>
+                            <div class="panel-body" style="padding: 3px">
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <legend>Informations générales</legend>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>Nom :
+                                        <label class="pull-right taille-12 text-info">Nom user</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>Prénom :
+                                        <label class="pull-right taille-12 text-info">prenom user</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>N° Téléphone :
+                                        <label class="pull-right taille-12 text-info">+243995502981</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>Email :
+                                        <label class="pull-right taille-12 text-info">mail@nasimu.net</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>Pays
+                                        <label class="pull-right taille-12 text-info">RDC</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>Ville :
+                                        <label class="pull-right taille-12 text-info">goma</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <legend>Informations d'entreprise</legend>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>nom d'entreprise :
+                                        <label class="pull-right taille-12 text-success">nasimu</label>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <legend>Nom d'envoi</legend>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>votre nom d'envoi :
+                                        <label class="pull-right taille-12 text-warning">Tezzou</label>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <legend>Balance</legend>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p>nombre messages :
+                                        <label class="pull-right taille-12 text-success">120 sms</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <button class="btn btn-md bc-orange blanc btn-orange"><strong>Recharger le compte</strong></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-primary tab-pane" id="edition-profil">
+                            <div class="panel-heading" style="padding: 5px">
+                                <h4>Edition de profil</h4>
+                            </div>
+                            <div class="panel-body" style="padding: 0px">
+
+                                <div id="form-inscription1">
+                                    <h:form>
+                                        <div class="form-group-lg col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
+                                            <legend>Mettez à jour votre profil ici</legend>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                                <label>Nom</label>
+                                                <h:inputText id="nom" class='form-control' required="requireds" a:placeholder="Votre nom"/>    
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                                <label>Prénom</label>
+                                                <h:inputText id="prenom" class='form-control' required="requireds" a:placeholder="Votre prenom"/>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                                <label>N° téléphone</label>
+                                                <h:inputText id="telephone" class='form-control' required="requireds" a:placeholder="Votre N° de Téléphone"/>    
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                                <label>Email</label>
+                                                <h:inputText a:type="email" id="motdepasse0" class='form-control' required="requireds" a:placeholder="Votre Adresse E-mail"/>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                                <label>Pays</label>
+                                                <h:selectOneMenu class='form-control'>
+                                                    <f:selectItem itemLabel="Pays" itemValue="pays"/>
+                                                </h:selectOneMenu>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                                <label>Ville</label>
+                                                <h:inputText a:type="email" id="ville" class='form-control' required="requireds" a:placeholder="Votre ville"/>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6 col-md-offset-6" style="padding-bottom: 10px">
+                                                <button class="btn btn-lg btn-primary btn-block " value="Créez votre compte" id="btn-register" style="margin-bottom: 5px; color: #fff">Enregistrez les modifications</button>
+                                            </div>
+                                        </div>
+                                    </h:form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default tab-pane" id="nom-envoi">
+                            <div class="panel-heading" style="background-color: #279494; color: #fff; padding: 5px">
+                                <h4>Nom d'envoi</h4>
+                            </div>
+                            <div class="panel-body">
+                                <legend>Modifiez le nom d'envoi ici</legend>
+                                <h:form>
+                                    <div class="form-group-lg col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                            <label>Nom d'envoi</label>
+                                            <h:inputText id="nom" class='form-control' required="requireds" a:placeholder="nom d'envoi"/>    
+                                        </div>
+
+                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" style="padding-bottom: 10px">
+                                            <button class="btn btn-lg btn-primary " id="btn-register" style="margin-bottom: 5px; color: #fff">Enregistrez la modification</button>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default tab-pane" id="entreprise">
+                            <div class="panel-heading" style="background-color: #127b15; color: #fff; padding: 5px">
+                                <h4>Entreprise</h4>
+                            </div>
+                            <div class="panel-body">
+                                <legend>Modifiez le nom d'entreprise ici</legend>
+                                <h:form>
+                                    <div class="form-group-lg col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                            <label>Nom d'entreprise</label>
+                                            <h:inputText id="nom" class='form-control' required="requireds" a:placeholder="nom d'entreprise"/>    
+                                        </div>
+
+                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" style="padding-bottom: 10px">
+                                            <button class="btn btn-lg btn-primary " id="btn-register" style="margin-bottom: 5px; color: #fff">Enregistrez la modification</button>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default tab-pane" id="abonnement">
+                            <div class="panel-heading" style="background-color: #eb360b; color: #fff; padding: 5px">
+                                <h4>Abonnement et Balance</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <p class="taille-20">Votre solde est :
+                                        <label class="pull-right taille-20 text-info">234 sms</label>
+                                    </p>
+                                </div>
+                                <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                    <button id="contact-recharge" class="btn btn-success btn-lg">Alimentez votre compte</button><br/><br/>
+                                    <div id="div-contact" class="label-info blanc hidden" style="padding: 8px">
+                                        <p>Contactez-nous pour alimenter votre compte<br/>
+                                            Nos contactez :
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+        <script>
+            $("#contact-recharge").click(function () {
+                $("#div-contact").removeClass("hidden");
+            });
+            $(".menu-item-droite").click(function () {
+                $(".menu-item-droite").removeClass("active");
+                $(this).addClass("active");
+            });
+        </script>
+    </body>
+</html>

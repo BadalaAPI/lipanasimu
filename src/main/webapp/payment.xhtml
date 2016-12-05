@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Nasimu.net</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css" />
+        <h:outputScript library="js" name="jquery-1.11.3.min.js"/>
+        <h:outputStylesheet library="css" name="index.css" />
+        <link rel="icon" type="image/ico" href="resources/img/iconlogo.png"/>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/nasimu.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>
+    </h:head>
+    <style>
+        .form-control:hover{
+            border: 2px solid #f5330e;
+            color: #2a7bb6
+        }
+        #label-creer-compte{
+            padding: 10px; border-radius: 5px; width: 100%; text-align: center
+        }
+    </style>
+    <h:body>
+        <div class="navbar navbar-default navbar-fixed-top" id="head" style="height: 70px">
+            <div class="container">
+                <div class="navbar-header pull-left hidden-xs">
+                    <a class="navbar-brand" style="margin-top: -20px" href="#">
+                        <img src="resources/img/logonasimu.png" width="200px" height="50px" class="img-rounded" alt="icon logo"/>
+                    </a>
+                </div>
+                <div class="navbar-header pull-left hidden-md hidden-sm hidden-lg pull-right">
+                    <a class="navbar-brand" style="margin-top: -20px" href="faces/index.xhtml">
+                        <img src="resources/img/logomin.jpg" width="50px" height="50px" class="img-rounded" alt="icon logo"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div  class="" style="width: 100%; margin-top: 70px">
+            <ui:remove>
+                <!--Form Connexion -->
+                <div id="form-login" class="bc-bleu-index block-login" style="width: 100%; padding: 20px">
+                    <div class="container">
+                        <h:form>
+                            <div class="form-group-lg" style="width: 100%; padding-top: 20px">
+
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px">
+                                    <h:inputText id="telephone" class='form-control' required="requireds" a:placeholder="N° téléphone"/>    
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px">
+                                    <h:inputSecret id="motdepasse" class='form-control' required="requireds" a:placeholder="Mot de passe"/>
+                                    <a href="#" class="taille-12" style="font-weight: bold; color: #33656a"><i class="fa fa-key"></i> Mot de passe oublié?</a>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px">
+                                    <h:commandButton class="btn btn-orange btn-lg btn-block bc-orange" value="Se connecter" style="margin-left: 5px; margin-bottom: 5px; color: #fff"/>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12" style="padding: 4px; position: absolute; top: 70px; right: 30px">
+                                    <span style="cursor: pointer" class="fa fa-close fa-3x rouge btn-close-form pull-right"></span>
+                                </div>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:remove>
+            <div class="container">
+                <h3 class="text-center taille-30 hidden-xs hidden-sm">Payer directement avec votre téléphone : simple et rapide! <span class="orange">Plus besoin d'employer vos cartes de crédits en ligne</span></h3>
+                <p:messages closable="true"/>
+
+                <h:panelGroup rendered="#{paymentController.cursor == 0 ? true : false}" id="form-inscription1">
+                    <h:form>
+                        <div class="form-group-lg col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-push-2 col-md-push-2" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 20px">
+                                <img width="100%" src="resources/img/stepRegister/step1.png" alt=""/>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 taille-17 hidden-xs hidden-sm" style="padding-bottom: 20px; text-align: center; margin-top: -57px">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blanc">
+                                    <label>Vérification</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Validation</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Terminez!</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 taille-10 hidden-lg hidden-md" style="padding-bottom: 20px; text-align: center; margin-top: -37px">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blanc">
+                                    <label>Vérification</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Validation</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Terminez!</label>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default" style="margin-top: 60px">
+                                <div class="panel-body">
+                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                        <legend>Informations générales</legend>
+                                    </div>
+                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                        <p>Marchant :
+                                            <label class="pull-right taille-12 text-info">Aliexpress</label>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                        <p>Montant :
+                                            <label class="pull-right taille-12 text-info">#{paymentController.amount} #{paymentController.currency}</label>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                        <p>Commission :
+                                            <label class="pull-right taille-12 text-info">#{paymentController.commission} USD</label>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                        <legend>Total à rétirer</legend>
+                                    </div>
+                                    <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                                        <p>Total
+                                            <label class="pull-right taille-20 text-success">#{paymentController.amount+paymentController.commission} USD</label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                <h:inputText value="#{login.telephone}" validator="#{validator.validateString}" requiredMessage="Veillez entrer le numéro de téléphone du compte" id="nom" class='form-control' required="true" a:placeholder="Votre numéro de téléphone"/>    
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom: 20px">
+                                <h:inputSecret value="#{login.pwd}" validator="#{validator.validateString}" requiredMessage="Veillez entrer le mot de passe" id="prenom" class='form-control' required="true" a:placeholder="Mot de passe"/>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-6 col-md-offset-6" style="padding-bottom: 10px">
+                                <h:commandLink actionListener="#{login.validateUsernamePassword}" class="btn btn-lg btn-primary btn-block " value="Se connecter" id="btn-register" style="margin-bottom: 5px; color: #fff"></h:commandLink>
+                                <label id="label-creer-compte" class="label-primary taille-16 blanc hidden"><i class="fa fa-spin fa-circle-o-notch"></i> Création en cours...</label>
+                            </div>
+                        </div>
+                    </h:form>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{paymentController.cursor == 2 ? true : false}" id="form-inscription2" class="">
+                    <h:form>
+                        <div class="form-group-lg col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-push-2 col-md-push-2 text-center" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 20px">
+                                <img width="100%" src="resources/img/stepRegister/step2.png" alt=""/>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 taille-17 hidden-xs hidden-sm" style="padding-bottom: 20px; text-align: center; margin-top: -57px">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Vérification</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blanc">
+                                    <label>Validation</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Terminez!</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 taille-10 hidden-lg hidden-md" style="padding-bottom: 20px; text-align: center; margin-top: -37px">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Vérification</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blanc">
+                                    <label>Validation</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Terminez!</label>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" style="margin-top: 60px">
+                                <div class="panel-body">
+                                    <label class="taille-25">Confirmez le Numéro de retrait</label>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-bottom: 20px">
+                                        <h:inputText value="#{paymentController.telephone}" validator="#{validator.validateTelephone}" id="motdepasse9" class='form-control' required="true" a:placeholder="Téléphone" style="text-align: center"/>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-bottom: 10px">
+                                        <h:commandButton actionListener="#{paymentController.sendSms}" class="btn btn-lg btn-primary btn-block " value="Confirmer Paiement" style="margin-bottom: 5px; color: #fff"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{paymentController.cursor == 3 ? true : false}" id="form-inscription3">
+                    <h:form>
+                        <div class="form-group-lg col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-push-2 col-md-push-2" style="padding-top: 20px; z-index: 4; position: relative; padding-left: 0px; padding-right: 0px">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 20px">
+                                <img width="100%" src="resources/img/stepRegister/step3.png" alt=""/>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 taille-17 hidden-xs hidden-sm" style="padding-bottom: 20px; text-align: center; margin-top: -57px">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Vérification</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Validation</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blanc">
+                                    <label>Terminez!</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 taille-10 hidden-lg hidden-md" style="padding-bottom: 20px; text-align: center; margin-top: -37px">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Vérification</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 gris">
+                                    <label>Validation</label>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 blanc">
+                                    <label>Terminez!</label>
+                                </div>
+                            </div>
+                        </div>
+                        <p:poll interval="1" update="confirmation"/>
+                        <h:panelGroup id="confirmation" class="panel panel-default " style="margin-top: 60px;">
+                            <h:panelGroup  rendered="#{!paymentController.codeCorrect}" class="panel-body">
+
+                                <div class="text-center col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-bottom: 10px">
+                                    <label class="taille-25">Un SMS Vous a été envoyé pour Confirmation</label>
+                                    <br/>
+                                    <h:graphicImage library="img" class="center-block" name="loading.gif"/>
+                                    <ui:remove>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                                 aria-valuenow="1°°" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                                                <span class="sr-only">100% Complete</span>
+                                            </div>
+                                        </div>
+                                    </ui:remove>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-bottom: 10px">
+                                    <h:commandButton class="btn btn-lg btn-primary btn-block disabled" value="En attente de votre confirmation" style="margin-bottom: 5px; color: #fff"/>
+                                </div>
+                            </h:panelGroup>
+                            <h:panelGroup  rendered="#{paymentController.codeCorrect}" class="panel-body">
+                                <div class="text-center col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-bottom: 10px">
+                                    <label class="taille-25 vert">Votre paiement a été réçu!</label>
+                                    <br/>  
+                                    <h:graphicImage library="img" name="airtelmoney.png"/>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3" style="padding-bottom: 10px">
+                                    <h:link  outcome="home.xhtml" class="btn btn-lg btn-primary btn-block" value="Terminer" style="margin-bottom: 5px; color: #fff"/>
+                                </div>
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </h:form>
+                </h:panelGroup>
+            </div>
+        </div>
+        <div class="" id="content">
+            <div id="description1">
+                <img style="position: fixed; bottom: 10px; left: -100px;" class="img-responsive" width="100%" src="resources/i/bg_blue_decor.png" alt=""/>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+            $("#label-creer-compte").hide();
+            $(".block-login").hide();
+            //$("#form-inscription2").hide();
+            $(".show-block-login").click(function () {
+                $(".block-login").fadeIn(400);
+                $("#head").css("border", "none");
+                $("#text-descr1").css("top", 220);
+            });
+
+            $(".btn-close-form").click(function () {
+                $(".block-menu-right").removeClass("hidden").fadeIn();
+                $(".block-login").hide();
+                $("#text-descr1").css("top", 100);
+            });
+            /**  
+             $("#btn-register").click(function(e) {
+             e.preventDefault();
+             $(this).hide();
+             $("#label-creer-compte").fadeIn().removeClass("hidden");
+             $("#form-inscription1").fadeOut(100);
+             $("#form-inscription2").fadeIn(100).removeClass("hidden");
+             });
+             **/
+        </script>
+
+    </h:body>
+</html>
